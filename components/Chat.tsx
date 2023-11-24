@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { fetchMessages } from "@/services/messageService";
 import { MessageType } from "@/types/Chat";
 import Message from "@/components/Message";
-import { TextField } from "@material-ui/core";
+import { TextField } from "@mui/material";
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -18,7 +18,7 @@ const Chat = () => {
       {messages.map((message: MessageType) => (
         <Message key={message.id} {...message} />
       ))}
-      <TextField />
+      <TextField placeholder="Enter message..." variant="outlined" />
     </div>
   );
 };

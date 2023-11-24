@@ -1,11 +1,17 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { fetchMessages } from "@/services/messageService";
 import { MessageType } from "@/types/Chat";
+import { Typography } from "@mui/material";
 
 const Message = (props: MessageType) => {
-  return <div>{props.text}</div>;
+  return (
+    <div>
+      <Typography>{props.user}</Typography>
+      <Typography>{props.date.toString()}</Typography>
+      <Typography>{props.message}</Typography>
+    </div>
+  );
 };
 
 export default Message;
