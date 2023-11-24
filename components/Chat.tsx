@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { fetchMessages } from "@/services/messageService";
 import { Message } from "@/types/Chat";
@@ -9,6 +11,8 @@ const Chat = () => {
     fetchMessages().then((messages) => setMessages(messages));
   }, []);
 
+  console.log(messages);
+
   return (
     <div>
       {messages.map((message: Message) => (
@@ -17,3 +21,5 @@ const Chat = () => {
     </div>
   );
 };
+
+export default Chat;

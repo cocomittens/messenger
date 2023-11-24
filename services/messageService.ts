@@ -1,4 +1,4 @@
-const API_ENDPOINT = "http://localhost:8000/api/messages";
+const API_ENDPOINT = "http://localhost:8000/api/messages/";
 
 export const fetchMessages = async () => {
   const response = await fetch(API_ENDPOINT);
