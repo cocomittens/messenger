@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { fetchMessages } from "@/services/messageService";
-import { Message } from "@/types/Chat";
+import { MessageType } from "@/types/Chat";
+import Message from "@/components/Message";
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -15,8 +16,8 @@ const Chat = () => {
 
   return (
     <div>
-      {messages.map((message: Message) => (
-        <div key={message.id}>{message.message}</div>
+      {messages.map((message: MessageType) => (
+        <Message key={message.id} {...message} />
       ))}
     </div>
   );
