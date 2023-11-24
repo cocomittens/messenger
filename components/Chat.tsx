@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { fetchMessages } from "@/services/messageService";
 import { MessageType } from "@/types/Chat";
 import Message from "@/components/Message";
+import { TextField } from "@material-ui/core";
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -12,13 +13,12 @@ const Chat = () => {
     fetchMessages().then((messages) => setMessages(messages));
   }, []);
 
-  console.log(messages);
-
   return (
     <div>
       {messages.map((message: MessageType) => (
         <Message key={message.id} {...message} />
       ))}
+      <TextField />
     </div>
   );
 };
