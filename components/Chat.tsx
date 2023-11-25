@@ -11,12 +11,19 @@ const Chat = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
+  const getAndSetMessages = () =>
+    fetchMessages().then((messages) => setMessages(messages));
+
   const handleSend = () => {
-    console.log(message);
+    createMessage({ message, user: "You", date: new Date(Date.now()) }).then(
+      (message) => {
+        getAndSetMessages();
+      }
+    );
   };
 
   useEffect(() => {
-    fetchMessages().then((messages) => setMessages(messages));
+    getAndSetMessages();
   }, []);
 
   return (
