@@ -12,7 +12,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
 
   const getAndSetMessages = () =>
-    fetchMessages().then((messages) => setMessages(messages));
+    fetchMessages().then((messages) => setMessages(messages.reverse()));
 
   const handleSend = () => {
     createMessage({ message, user: "You", date: new Date(Date.now()) }).then(
