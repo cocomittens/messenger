@@ -1,14 +1,19 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { fetchMessages } from "@/services/messageService";
+import { fetchMessages, createMessage } from "@/services/messageService";
 import { MessageType } from "@/types/Chat";
 import Message from "@/components/Message";
 import { TextField, Box, IconButton, Grid } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 
 const Chat = () => {
+  const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+
+  const handleSend = () => {
+    console.log(message);
+  };
 
   useEffect(() => {
     fetchMessages().then((messages) => setMessages(messages));
@@ -39,10 +44,12 @@ const Chat = () => {
               placeholder="Enter message..."
               variant="outlined"
               fullWidth
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
             />
           </Grid>
           <Grid container item xs={1} justifyContent="center">
-            <IconButton color="secondary">
+            <IconButton color="secondary" onClick={handleSend}>
               <SendIcon />
             </IconButton>
           </Grid>
