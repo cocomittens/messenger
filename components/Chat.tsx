@@ -41,9 +41,11 @@ const Chat = () => {
               fullWidth
             />
           </Grid>
-          <IconButton color="secondary">
-            <SendIcon />
-          </IconButton>
+          <Grid container item xs={1} justifyContent="center">
+            <IconButton color="secondary">
+              <SendIcon />
+            </IconButton>
+          </Grid>
         </Grid>
       </Grid>
     </Box>
