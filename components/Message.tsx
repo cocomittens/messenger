@@ -2,15 +2,21 @@
 
 import React, { useEffect, useState } from "react";
 import { MessageType } from "@/types/Chat";
-import { Typography } from "@mui/material";
+import { Typography, Grid } from "@mui/material";
 
 const Message = (props: MessageType) => {
   return (
-    <div>
-      <Typography>{props.user}</Typography>
-      <Typography>{props.date.toString()}</Typography>
-      <Typography>{props.message}</Typography>
-    </div>
+    <Grid container width="20vw">
+      <Grid container item xs={12} justifyContent="space-between">
+        <Typography color="#111">{props.user}</Typography>
+        <Typography color="#111">
+          {new Date(props.date).toTimeString().slice(0, 5)}
+        </Typography>
+      </Grid>
+      <Grid item xs={12} bgcolor="#111" p={1} borderRadius={1}>
+        <Typography>{props.message}</Typography>
+      </Grid>
+    </Grid>
   );
 };
 
