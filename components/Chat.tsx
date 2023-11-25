@@ -25,8 +25,14 @@ const Chat = () => {
         {messages.map((message: MessageType) => (
           <Message key={message.id} {...message} />
         ))}
-        <Grid container item direction="row" justifyContent="center">
-          <Grid item xs={10}>
+        <Grid
+          container
+          item
+          direction="row"
+          justifyContent="space-between"
+          mt={2}
+        >
+          <Grid item xs={11}>
             <TextField
               color="secondary"
               multiline
