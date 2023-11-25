@@ -5,9 +5,15 @@ import { MessageType } from "@/types/Chat";
 import { Typography, Grid } from "@mui/material";
 
 const Message = (props: MessageType) => {
+  const isCurrentUser = props.user === "You";
   return (
-    <Grid container width="20vw">
-      <Grid container item xs={12} justifyContent="space-between">
+    <Grid
+      container
+      item
+      width="40%"
+      alignSelf={!isCurrentUser ? "flex-start" : "flex-end"}
+    >
+      <Grid container item justifyContent="space-between">
         <Typography color="#111">{props.user}</Typography>
         <Typography color="#111">
           {new Date(props.date).toTimeString().slice(0, 5)}
