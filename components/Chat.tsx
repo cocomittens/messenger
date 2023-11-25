@@ -29,11 +29,20 @@ const Chat = () => {
   return (
     <Box
       width="100vw"
+      height="100vh"
       display="flex"
       flexDirection="column"
       alignItems="center"
+      justifyContent="center"
     >
-      <Grid container direction="column" width="60vw">
+      <Grid
+        container
+        direction="column"
+        width="60vw"
+        bgcolor="rgba(255, 255, 255, 0.5)"
+        borderRadius={2}
+        p={2}
+      >
         {messages.map((message: MessageType) => (
           <Message key={message.id} {...message} />
         ))}
