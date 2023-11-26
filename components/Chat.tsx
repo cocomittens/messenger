@@ -13,6 +13,7 @@ import {
   Avatar,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
+import Header from "./Header";
 
 const Chat = () => {
   const [message, setMessage] = useState("");
@@ -42,14 +43,7 @@ const Chat = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <Grid container item width="60vw" alignItems="center" p={1}>
-        <Grid item>
-          <Avatar src="https://pusheen.com/wp-content/uploads/2020/12/What-Sweet-Quiz-SocialResults_Donut-1-e1608220861325.jpg" />
-        </Grid>
-        <Grid item px={1}>
-          <Typography color="#111">ilovecats420</Typography>
-        </Grid>
-      </Grid>
+      <Header />
       <Grid
         container
         direction="column"
