@@ -4,14 +4,7 @@ import React, { useEffect, useState } from "react";
 import { fetchMessages, createMessage } from "@/services/messageService";
 import { MessageType } from "@/types/Chat";
 import Message from "@/components/Message";
-import {
-  TextField,
-  Box,
-  IconButton,
-  Grid,
-  Typography,
-  Avatar,
-} from "@mui/material";
+import { TextField, Box, IconButton, Grid } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import Header from "./Header";
 
@@ -48,6 +41,8 @@ const Chat = () => {
         container
         direction="column"
         width="60vw"
+        height="80vh"
+        justifyContent="flex-end"
         bgcolor="rgba(255, 255, 255, 0.5)"
         borderRadius={2}
         p={2}

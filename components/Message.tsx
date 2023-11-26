@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MessageType } from "@/types/Chat";
 import { Typography, Grid } from "@mui/material";
 
