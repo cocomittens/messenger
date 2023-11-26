@@ -16,11 +16,14 @@ const Chat = () => {
     fetchMessages().then((messages) => setMessages(messages.reverse()));
 
   const handleSend = () => {
-    createMessage({ message, user: "You", date: new Date(Date.now()) }).then(
-      (message) => {
-        getAndSetMessages();
-      }
-    );
+    createMessage({
+      message,
+      sender: 4,
+      recipient: 3,
+      date: new Date(Date.now()),
+    }).then((message) => {
+      getAndSetMessages();
+    });
   };
 
   useEffect(() => {

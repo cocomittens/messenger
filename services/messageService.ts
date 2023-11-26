@@ -9,18 +9,25 @@ export const fetchMessages = async () => {
 export const createMessage = async ({
   message,
   date,
-  user,
+  sender,
+  recipient,
 }: {
   message: string;
   date: Date;
-  user: string;
+  sender: number;
+  recipient: number;
 }) => {
   const response = await fetch(API_ENDPOINT, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ message, date: date.toISOString(), user }),
+    body: JSON.stringify({
+      message,
+      date: date.toISOString(),
+      sender,
+      recipient,
+    }),
   });
   const data = await response.json();
   return data;
