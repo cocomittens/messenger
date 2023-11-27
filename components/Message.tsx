@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { MessageType } from "@/types/Chat";
 import { Typography, Grid } from "@mui/material";
 
@@ -24,4 +24,4 @@ const Message = (props: MessageType) => {
   );
 };
 
-export default Message;
+export default memo(Message);

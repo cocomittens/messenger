@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Grid, Typography, Avatar } from "@mui/material";
 import { User } from "@/types/User";
 
@@ -15,4 +15,4 @@ const Contact = ({ username, image }: User) => {
   );
 };
 
-export default Contact;
+export default memo(Contact);
