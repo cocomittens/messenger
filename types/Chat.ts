@@ -1,6 +1,7 @@
 export type MessageType = {
   id: number;
   message: string;
-  user: string;
+  recipient: any;
+  sender: any;
   date: Date;
 };

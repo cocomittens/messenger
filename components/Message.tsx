@@ -3,16 +3,16 @@ import { MessageType } from "@/types/Chat";
 import { Typography, Grid } from "@mui/material";
 
 const Message = (props: MessageType) => {
-  const isCurrentUser = props.user === "You";
+  const isCurrentUser = props.recipient === 4;
   return (
     <Grid
       container
       item
       width="40%"
-      alignSelf={!isCurrentUser ? "flex-start" : "flex-end"}
+      alignSelf={isCurrentUser ? "flex-start" : "flex-end"}
     >
       <Grid container item justifyContent="space-between">
-        <Typography color="#111">{props.user}</Typography>
+        <Typography color="#111">{isCurrentUser && props.sender}</Typography>
         <Typography color="#111">
           {new Date(props.date).toTimeString().slice(0, 5)}
         </Typography>

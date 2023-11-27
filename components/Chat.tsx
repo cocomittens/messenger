@@ -49,6 +49,9 @@ const Chat = () => {
         bgcolor="rgba(255, 255, 255, 0.5)"
         borderRadius={2}
         p={2}
+        onKeyDown={(e) => {
+          e.key === "Enter" && handleSend();
+        }}
       >
         {messages.map((message: MessageType) => (
           <Message key={message.id} {...message} />
