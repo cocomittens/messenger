@@ -5,7 +5,6 @@ import { fetchMessages, createMessage } from "@/services/messageService";
 import { MessageType } from "@/types/Chat";
 import { TextField, Box, IconButton, Grid } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import { fetchUserProfile } from "@/services/messageService";
 import Header from "./Header";
 import Message from "@/components/Message";
 import Contacts from "@/components/Contacts";
@@ -13,11 +12,6 @@ import Contacts from "@/components/Contacts";
 const Chat = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const [user, setUser] = useState({ username: "", image: "" });
-
-  useEffect(() => {
-    fetchUserProfile(3).then((user) => setUser(user));
-  }, []);
 
   const getAndSetMessages = () =>
     fetchMessages().then((messages) => setMessages(messages.reverse()));
@@ -48,11 +42,10 @@ const Chat = () => {
     >
       <Grid container>
         <Grid container item xs={3}>
-          <Contacts contacts={[user]} />
+          <Contacts />
         </Grid>
         <Grid container item xs={9}>
-          <Header username={user.username} image={user.image} />
-
+          <Header />
           <Grid
             container
             direction="column"
@@ -67,7 +60,7 @@ const Chat = () => {
             }}
           >
             {messages.map((message: MessageType) => (
-              <Message key={message.id} {...message} {...user} />
+              <Message key={message.id} {...message} />
             ))}
             <Grid
               container

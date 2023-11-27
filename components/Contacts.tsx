@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Grid } from "@mui/material";
 import Contact from "./Contact";
-import { User } from "@/types/User";
+import UserContext from "@/contexts/UserContext";
 
-const Contacts = ({ contacts }: { contacts: User[] }) => {
+const Contacts = () => {
+  const user = useContext(UserContext);
+  const contacts = [user];
   return (
     <Grid
       container

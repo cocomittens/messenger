@@ -1,12 +1,10 @@
+import React, { useContext } from "react";
 import Contact from "./Contact";
+import UserContext from "@/contexts/UserContext";
 
-type User = {
-  username: string;
-  image: string;
-};
-
-const Header = ({ username, image }: User) => {
-  return <Contact username={username} image={image} />;
+const Header = () => {
+  const user = useContext(UserContext);
+  return <Contact username={user.username} image={user.image} />;
 };
 
 export default Header;
