@@ -7,10 +7,16 @@ import Message from "@/components/Message";
 import { TextField, Box, IconButton, Grid } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import Header from "./Header";
+import { fetchUserProfile } from "@/services/messageService";
 
 const Chat = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [user, setUser] = useState({ username: "", image: "" });
+
+  useEffect(() => {
+    fetchUserProfile(3).then((user) => setUser(user));
+  }, []);
 
   const getAndSetMessages = () =>
     fetchMessages().then((messages) => setMessages(messages.reverse()));
@@ -39,7 +45,7 @@ const Chat = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <Header />
+      <Header username={user.username} image={user.image} />
       <Grid
         container
         direction="column"
