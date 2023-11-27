@@ -41,7 +41,7 @@ const Chat = () => {
       justifyContent="center"
     >
       <Grid container>
-        <Grid container item xs={3}>
+        <Grid container item xs={3} justifyContent="center">
           <Contacts />
         </Grid>
         <Grid container item xs={9}>

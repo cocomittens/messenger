@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import Contact from "./Contact";
 import UserContext from "@/contexts/UserContext";
 
@@ -17,11 +17,13 @@ const Contacts = () => {
     >
       {contacts.map((contact) => {
         return (
-          <Contact
-            username={contact.username}
-            image={contact.image}
-            center={true}
-          />
+          <Box bgcolor="rgba(255, 255, 255, 0.5)" width="100%">
+            <Contact
+              username={contact.username}
+              image={contact.image}
+              center={true}
+            />
+          </Box>
         );
       })}
     </Grid>
