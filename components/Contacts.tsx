@@ -15,7 +15,7 @@ const Contacts = () => {
       direction="column"
       p={1}
     >
-      {contacts.map((contact) => {
+      {contacts.map((contact, i) => {
         return (
           <Box
             bgcolor="rgba(255, 255, 255, 0.5)"
@@ -23,7 +23,11 @@ const Contacts = () => {
             borderRadius={2}
             border="1px #111 solid"
           >
-            <Contact username={contact.username} image={contact.image} />
+            <Contact
+              key={i}
+              username={contact.username}
+              image={contact.image}
+            />
           </Box>
         );
       })}
