@@ -53,6 +53,7 @@ const Chat = () => {
             height="80vh"
             justifyContent="flex-end"
             bgcolor="rgba(255, 255, 255, 0.5)"
+            border="1px #111 solid"
             borderRadius={2}
             p={2}
             onKeyDown={(e) => {

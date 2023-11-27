@@ -17,12 +17,13 @@ const Contacts = () => {
     >
       {contacts.map((contact) => {
         return (
-          <Box bgcolor="rgba(255, 255, 255, 0.5)" width="100%">
-            <Contact
-              username={contact.username}
-              image={contact.image}
-              center={true}
-            />
+          <Box
+            bgcolor="rgba(255, 255, 255, 0.5)"
+            width="100%"
+            borderRadius={2}
+            border="1px #111 solid"
+          >
+            <Contact username={contact.username} image={contact.image} />
           </Box>
         );
       })}
