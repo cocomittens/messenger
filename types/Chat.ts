@@ -4,4 +4,6 @@ export type MessageType = {
   recipient: any;
   sender: any;
   date: Date;
+  username: string;
+  image: string;
 };

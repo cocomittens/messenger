@@ -12,7 +12,7 @@ const Message = (props: MessageType) => {
       alignSelf={isCurrentUser ? "flex-start" : "flex-end"}
     >
       <Grid container item justifyContent="space-between">
-        <Typography color="#111">{isCurrentUser && props.sender}</Typography>
+        <Typography color="#111">{isCurrentUser && props.username}</Typography>
         <Typography color="#111">
           {new Date(props.date).toTimeString().slice(0, 5)}
         </Typography>

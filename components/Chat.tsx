@@ -60,7 +60,7 @@ const Chat = () => {
         }}
       >
         {messages.map((message: MessageType) => (
-          <Message key={message.id} {...message} />
+          <Message key={message.id} {...message} {...user} />
         ))}
         <Grid
           container
